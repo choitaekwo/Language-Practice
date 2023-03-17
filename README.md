@@ -2,7 +2,7 @@
 * Studing computer/programming language (basic level).
 
 ## Language
-* C/C++
+* C
 * Python
 * Java
 * JavaScript/Web
