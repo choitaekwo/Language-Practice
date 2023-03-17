@@ -1,5 +1,5 @@
 # Language-Practice
-* Studing computer/programming language.
+* Studing computer/programming language (basic level).
 
 ## Language
 * C/C++
