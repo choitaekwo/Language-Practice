@@ -1,2 +1,8 @@
 # Language-Practice
-Basic
+* Studing computer/programming language.
+
+## Language
+* C/C++
+* Python
+* Java
+* JavaScript/Web
