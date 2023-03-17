@@ -8,15 +8,15 @@ void print_nums(int* lotto_nums);
 
 int main_array_and_pointer() {
 
-	// ¹è¿­°ú Æ÷ÀÎÅÍ                                                            // *(arr + i) == arr[i]  ¶È°°Àº Ç¥Çö
-																			   // arr == arr ¹è¿­ÀÇ Ã¹ ¹øÂ° °ªÀÇ ÁÖ¼Ò¿Í µ¿ÀÏ == &arr[0]
-	// ¹è¿­¸í¿¡ Á¤¼ö ¿¬»êÀ» ¼öÇàÇÏ¿© ¹è¿­ ¿ä¼Ò »ç¿ë
+	// ë°°ì—´ê³¼ í¬ì¸í„°                                                            // *(arr + i) == arr[i]  ë˜‘ê°™ì€ í‘œí˜„
+					                             // arr == arr ë°°ì—´ì˜ ì²« ë²ˆì§¸ ê°’ì˜ ì£¼ì†Œì™€ ë™ì¼ == &arr[0]
+	// ë°°ì—´ëª…ì— ì •ìˆ˜ ì—°ì‚°ì„ ìˆ˜í–‰í•˜ì—¬ ë°°ì—´ ìš”ì†Œ ì‚¬ìš©
 	int ary[3] = { 0 };
 
 	*(ary + 0) = 10;   // ary[0] = 10
 	*(ary + 1) = *(ary + 0) + 10;    // ary[1] = ary[0] + 10
 
-	printf("¼¼ ¹øÂ° ¹è¿­ ¿ä¼Ò¿¡ Å°º¸µå ÀÔ·Â : ");
+	printf("ì„¸ ë²ˆì§¸ ë°°ì—´ ìš”ì†Œì— í‚¤ë³´ë“œ ì…ë ¥ : ");
 	scanf_s("%d", ary + 2);   // &ary[2]
 
 	for (int i = 0; i < 3; i++)
@@ -26,13 +26,13 @@ int main_array_and_pointer() {
 	printf("\n\n");
 
 
-	// ¹è¿­¸íÃ³·³ »ç¿ëµÇ´Â Æ÷ÀÎÅÍ
+	// ë°°ì—´ëª…ì²˜ëŸ¼ ì‚¬ìš©ë˜ëŠ” í¬ì¸í„°
 	int ary2[3] = { 0 };
-	int* pary2 = ary2;    // Æ÷ÀÎÅÍ¿¡ ¹è¿­¸í ÀúÀå
+	int* pary2 = ary2;    // í¬ì¸í„°ì— ë°°ì—´ëª… ì €ì¥
 
-	*pary2 = 10;    // Ã¹ ¹øÂ° ¹è¿­ ¿ä¼Ò¿¡ 10 ´ëÀÔ
-	*(pary2 + 1) = 20;  // µÎ ¹øÀç 20 ´ëÀÔ
-	pary2[2] = pary2[0] + pary2[2];   // ´ë°ıÈ£¸¦ ½á¼­ pary2 ¸¦ ¹è¿­¸íÃ³·³ »ç¿ë
+	*pary2 = 10;    // ì²« ë²ˆì§¸ ë°°ì—´ ìš”ì†Œì— 10 ëŒ€ì…
+	*(pary2 + 1) = 20;  // ë‘ ë²ˆì¬ 20 ëŒ€ì…
+	pary2[2] = pary2[0] + pary2[2];   // ëŒ€ê´„í˜¸ë¥¼ ì¨ì„œ pary2 ë¥¼ ë°°ì—´ëª…ì²˜ëŸ¼ ì‚¬ìš©
 
 	for (int i = 0; i < 3; i++)
 	{
@@ -41,45 +41,45 @@ int main_array_and_pointer() {
 	printf("\n\n");
 
 
-	// Æ÷ÀÎÅÍ¸¦ ÀÌ¿ëÇÑ ¹è¿­ÀÇ °ª Ãâ·Â
+	// í¬ì¸í„°ë¥¼ ì´ìš©í•œ ë°°ì—´ì˜ ê°’ ì¶œë ¥
 	int ary3[3] = { 10, 20, 30 };
 	int* pary3;
 	pary3 = &ary3;
 
-	printf("¹è¿­ÀÇ °ª : ");
+	printf("ë°°ì—´ì˜ ê°’ : ");
 	for (int i = 0; i < sizeof(ary3) / sizeof(int); i++)
 	{
-		printf("%5d", *pary3);   // pary3 °¡ °¡¸®Å°´Â ¹è¿­ ¿ä¼Ò Ãâ·Â
-		pary3++;            // ´ÙÀ½ ¹è¿­ ¿ä¼Ò¸¦ °¡¸®Å°µµ·Ï pary3 °ª Áõ°¡
+		printf("%5d", *pary3);   // pary3 ê°€ ê°€ë¦¬í‚¤ëŠ” ë°°ì—´ ìš”ì†Œ ì¶œë ¥
+		pary3++;            // ë‹¤ìŒ ë°°ì—´ ìš”ì†Œë¥¼ ê°€ë¦¬í‚¤ë„ë¡ pary3 ê°’ ì¦ê°€
 	}
 	printf("\n\n");
 
 
-	// Æ÷ÀÎÅÍÀÇ »¬¼À°ú °ü°è ¿¬»ê
+	// í¬ì¸í„°ì˜ ëº„ì…ˆê³¼ ê´€ê³„ ì—°ì‚°
 	int ary4[5] = { 10, 20, 30, 40, 50 };
-	int* pary4 = ary4;     // Ã¹ ¹øÂ° ¹è¿­ ¿ä¼Ò ÁÖ¼Ò
-	int* pb = pary4 + 3;   // ³× ¹øÂ° ¹è¿­ ¿ä¼Ò ÁÖ¼Ò
+	int* pary4 = ary4;     // ì²« ë²ˆì§¸ ë°°ì—´ ìš”ì†Œ ì£¼ì†Œ
+	int* pb = pary4 + 3;   // ë„¤ ë²ˆì§¸ ë°°ì—´ ìš”ì†Œ ì£¼ì†Œ
 
 	printf("pary4 : %u\n", pary4);
 	printf("pb : %u\n", pb);
-	pary4++; // ´ÙÀ½ ¹è¿­ ¿ä¼Ò·Î ÀÌµ¿
-	printf("pb - pary4 : %u\n", pb - pary4);   // µÎ Æ÷ÀÎÅÍÀÇ »¬¼À    // ¹è¿­ ¿ä¼Ò °£ÀÇ °£°İ Â÷ÀÌ
+	pary4++; // ë‹¤ìŒ ë°°ì—´ ìš”ì†Œë¡œ ì´ë™
+	printf("pb - pary4 : %u\n", pb - pary4);   // ë‘ í¬ì¸í„°ì˜ ëº„ì…ˆ    // ë°°ì—´ ìš”ì†Œ ê°„ì˜ ê°„ê²© ì°¨ì´
 
-	printf("¾Õ¿¡ ÀÖ´Â ¹è¿­ ¿ä¼ÒÀÇ °ª Ãâ·Â : ");
+	printf("ì•ì— ìˆëŠ” ë°°ì—´ ìš”ì†Œì˜ ê°’ ì¶œë ¥ : ");
 	if (pary4 < pb) printf("%d\n", *pary4);
 	else printf("%d\n", *pb);
 
 
-	// ¹è¿­À» Ã³¸®ÇÏ´Â ÇÔ¼ö
+	// ë°°ì—´ì„ ì²˜ë¦¬í•˜ëŠ” í•¨ìˆ˜
 	int array[5] = { 10, 20, 30, 40, 50 };
 	int array2[7] = { 1, 2, 3, 4, 5, 6, 7 };
 
-	print_array(array, sizeof(array) / sizeof(int));   // ¹è¿­¸íÀ» ÁÖ°í ÇÔ¼ö È£Ãâ
+	print_array(array, sizeof(array) / sizeof(int));   // ë°°ì—´ëª…ì„ ì£¼ê³  í•¨ìˆ˜ í˜¸ì¶œ
 	printf("\n");
 	print_array(array2, sizeof(array2) / sizeof(int));
 	printf("\n");
 
-	// ¹è¿­¿¡ °ªÀ» ÀÔ·ÂÇÏ´Â ÇÔ¼ö
+	// ë°°ì—´ì— ê°’ì„ ì…ë ¥í•˜ëŠ” í•¨ìˆ˜
 	double array3[5];
 	double max;
 
@@ -88,10 +88,10 @@ int main_array_and_pointer() {
 	input_array(array3, size);
 	max = find_max(array3, size);
 
-	printf("¹è¿­ÀÇ ÃÖ´ë°ª : %.1lf\n", max);
+	printf("ë°°ì—´ì˜ ìµœëŒ€ê°’ : %.1lf\n", max);
 
 
-	// µµÀü ½ÇÀü¿¹Á¦ 10Àå // ·Î¶Ç ¹øÈ£ »ı¼º ÇÁ·Î±×·¥
+	// ë„ì „ ì‹¤ì „ì˜ˆì œ 10ì¥ // ë¡œë˜ ë²ˆí˜¸ ìƒì„± í”„ë¡œê·¸ë¨
 	int lotto_nums[6];
 	input_nums(lotto_nums);
 	print_nums(lotto_nums);
@@ -108,7 +108,7 @@ void print_array(int* parray, int size)
 
 void input_array(double* parray, int size)
 {
-	printf("%d°³ ½Ç¼ö °ª ÀÔ·Â : ", size);
+	printf("%dê°œ ì‹¤ìˆ˜ ê°’ ì…ë ¥ : ", size);
 	for (int i = 0; i < size; i++)
 	{
 		scanf_s("%lf", parray + i);
@@ -132,12 +132,12 @@ void input_nums(int* lotto_nums)
 {
 	for (int i = 0; i < 6; i++)
 	{
-		printf("¹øÈ£ ÀÔ·Â : ");
+		printf("ë²ˆí˜¸ ì…ë ¥ : ");
 		scanf_s("%d", lotto_nums + i);
 
 		if (lotto_nums[i] == lotto_nums[i - 1])
 		{
-			printf("°°Àº ¹øÈ£°¡ ÀÖ½À´Ï´Ù!\n");
+			printf("ê°™ì€ ë²ˆí˜¸ê°€ ìˆìŠµë‹ˆë‹¤!\n");
 			i--;
 		}
 	}
@@ -145,14 +145,14 @@ void input_nums(int* lotto_nums)
 
 void print_nums(int* lotto_nums)
 {
-	printf("·Î¶Ç ¹øÈ£ : ");
+	printf("ë¡œë˜ ë²ˆí˜¸ : ");
 	for (int i = 0; i < 6; i++)
 	{
 		printf("%d\t", lotto_nums[i]);
 	}
 }
 
-void checking_grade(int* lotto_nums)     // ¹Ì¸® ¹øÈ£ 6°³ »ı¼ºÇØ³õ°í »ç¿ëÀÚÇÑÅ× ÀÔ·Â ¹Ş°í ¸î °³ ¸Â¾Ò´ÂÁö È®ÀÎÇØ¼­ µî¼ö ¾Ë·ÁÁÖ±â
+void checking_grade(int* lotto_nums)     // ë¯¸ë¦¬ ë²ˆí˜¸ 6ê°œ ìƒì„±í•´ë†“ê³  ì‚¬ìš©ìí•œí…Œ ì…ë ¥ ë°›ê³  ëª‡ ê°œ ë§ì•˜ëŠ”ì§€ í™•ì¸í•´ì„œ ë“±ìˆ˜ ì•Œë ¤ì£¼ê¸°
 {
 
 }
